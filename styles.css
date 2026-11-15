@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans JP", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  --font-display: "Shippori Mincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
+  --color-ink: #101614;
+  --color-panel: #18211d;
+  --color-panel-2: #212b26;
+  --color-line: #314039;
+  --color-paper: #e8efe9;
+  --color-mute: #93a59a;
+  --color-brass: #e0b15a;
+  --color-brass-ink: #1c1508;
+  --color-up: #3ecf8e;
+  --color-down: #ff6d6d;
+  --color-s1: #e0b15a;
+  --color-s2: #8eb6ff;
+  --color-s3: #3ecf8e;
+  --color-s4: #f09a78;
+}
+
+@layer base {
+  html {
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-ink);
+    color: var(--color-paper);
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: var(--color-brass);
+    color: var(--color-brass-ink);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
